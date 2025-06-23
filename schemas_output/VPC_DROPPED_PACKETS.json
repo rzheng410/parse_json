@@ -1,0 +1,35 @@
+[
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "VPC Dropped Packets",
+    "type": "object",
+    "properties": {
+      "uuid": {
+        "type": "string"
+      },
+      "source_vpc": {
+        "type": "string"
+      },
+      "result": {
+        "type": "string"
+      },
+      "node": {
+        "type": "string"
+      },
+      "timestamp": {
+        "type": "string"
+      },
+      "packets": {
+        "type": "number"
+      }
+    },
+    "required": [
+      "uuid",
+      "source_vpc",
+      "result",
+      "node",
+      "timestamp",
+      "packets"
+    ]
+  }
+]

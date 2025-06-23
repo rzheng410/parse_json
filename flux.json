@@ -1,0 +1,1138 @@
+{
+  "eventTypes": [
+    {
+      "producerId": "account-workers.billing-cloudways-sandbox.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.address_updated",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/AddressUpdatedEvent\",\"$defs\":{\"AddressUpdatedEvent\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"resource_urn\":{\"type\":\"string\"},\"billing_address_id\":{\"type\":\"integer\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"resource_urn\",\"billing_address_id\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--account-workers.billing-cloudways-sandbox--billing.lifecycle.address-updated--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "bandwidth-collector.network-product.service.digitalocean.com",
+      "eventTypeIdentifier": "PEERING_BILLING_USAGE",
+      "version": "v1",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"title\":\"Peering Billing Usage\",\"type\":\"object\",\"properties\":{\"uuid\":{\"type\":\"string\"},\"account_urn\":{\"type\":\"string\"},\"resource_urn\":{\"type\":\"string\"},\"sku\":{\"type\":\"string\"},\"region_urn\":{\"type\":\"string\"},\"event_type\":{\"type\":\"string\"},\"attributes\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"key\":{\"type\":\"string\"},\"unit\":{\"type\":\"string\"},\"quantity\":{\"type\":\"number\"}},\"required\":[\"key\",\"unit\",\"quantity\"]}},\"measurement\":{\"type\":\"object\",\"properties\":{\"start\":{\"type\":\"string\"},\"stop\":{\"type\":\"string\"}},\"required\":[\"start\",\"stop\"]},\"metadata\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"key\":{\"type\":\"string\"},\"value\":{\"type\":\"string\"}},\"required\":[\"key\",\"value\"]}}},\"required\":[\"uuid\",\"account_urn\",\"resource_urn\",\"sku\",\"region_urn\",\"event_type\",\"attributes\"]}\n",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--bandwidth-collector.network-product--peering-billing-usage--v1--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "resource_urn",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "bandwidth-collector.network-product.service.digitalocean.com",
+      "eventTypeIdentifier": "interconnect.state.remote_routes",
+      "version": "v1",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"title\":\"Route Monitoring Message\",\"type\":\"object\",\"properties\":{\"ia_uuid\":{\"type\":\"string\",\"minLength\":1},\"partner_interconnect_attachment_urn\":{\"type\":\"string\",\"minLength\":1},\"bmp_monitor_msg\":{\"type\":\"object\",\"properties\":{\"tunnel_id\":{\"type\":\"integer\",\"minimum\":1},\"peer_address\":{\"type\":\"string\",\"minLength\":1},\"peer_asn\":{\"type\":\"integer\",\"minimum\":1}},\"required\":[\"tunnel_id\",\"peer_address\",\"peer_asn\"],\"oneOf\":[{\"properties\":{\"withdrawn_routes\":{\"type\":\"object\",\"properties\":{\"routes\":{\"type\":\"array\",\"minItems\":1}},\"required\":[\"routes\"]},\"announced_routes\":{\"type\":\"null\"}},\"required\":[\"withdrawn_routes\"]},{\"properties\":{\"announced_routes\":{\"type\":\"object\",\"properties\":{\"routes\":{\"type\":\"array\",\"minItems\":1},\"next_hop\":{\"type\":\"string\",\"minLength\":1},\"as_path\":{\"type\":\"array\",\"minItems\":1}},\"required\":[\"routes\",\"next_hop\",\"as_path\"]},\"withdrawn_routes\":{\"type\":\"null\"}},\"required\":[\"announced_routes\"]}]}},\"required\":[\"ia_uuid\",\"partner_interconnect_attachment_urn\",\"bmp_monitor_msg\"]}\n",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--bandwidth-collector.network-product--interconnect.state.remote-routes--v1--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "ia_uuid",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "account-workers.billing-cloudways.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.address_updated",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/AddressUpdatedEvent\",\"$defs\":{\"AddressUpdatedEvent\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"resource_urn\":{\"type\":\"string\"},\"billing_address_id\":{\"type\":\"integer\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"resource_urn\",\"billing_address_id\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--account-workers.billing-cloudways--billing.lifecycle.address-updated--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "invoice-workers.billing.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.invoice_generated",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/InvoiceGenerated\",\"$defs\":{\"InvoiceGenerated\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"resource_urn\":{\"type\":\"string\"},\"invoice_total\":{\"type\":\"string\"},\"invoice_segment\":{\"type\":\"string\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"resource_urn\",\"invoice_total\",\"invoice_segment\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--invoice-workers.billing--billing.lifecycle.invoice-generated--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "account-workers.billing-cloudways.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.tax_payment_address_updated",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/TaxPaymentAddressUpdateEvent\",\"$defs\":{\"TaxPaymentAddressUpdateEvent\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"resource_urn\":{\"type\":\"string\"},\"billing_address_id\":{\"type\":\"integer\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"resource_urn\",\"billing_address_id\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--account-workers.billing-cloudways--billing.lifecycle.tax-payment-address-updated--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "account-workers.billing-cloudways.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.account_state_updated",
+      "version": "v1.0.1",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/AccountStateUpdated\",\"$defs\":{\"AccountStateUpdated\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"resource_urn\":{\"type\":\"string\"},\"actor_urn\":{\"type\":\"string\"},\"state_name\":{\"type\":\"string\"},\"state_value\":{\"type\":\"string\"},\"state_note\":{\"type\":\"string\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"resource_urn\",\"actor_urn\",\"state_name\",\"state_value\",\"state_note\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--account-workers.billing-cloudways--billing.lifecycle.account-state-updated--v1.0.1--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "account-workers.billing-cloudways-sandbox.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.extended_credit_expiration",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/ExtendCreditExpiration\",\"$defs\":{\"ExtendCreditExpiration\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"actor_urn\":{\"type\":\"string\"},\"resource_urn\":{\"type\":\"string\"},\"credit_id\":{\"type\":\"integer\"},\"old_expiration\":{\"type\":\"string\",\"format\":\"date-time\"},\"new_expiration\":{\"type\":\"string\",\"format\":\"date-time\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"actor_urn\",\"resource_urn\",\"credit_id\",\"old_expiration\",\"new_expiration\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--account-workers.billing-cloudways-sandbox--billing.lifecycle.extended-credit-expiration--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "invoice-workers.billing-cloudways-sandbox.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.invoice_generated",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/InvoiceGenerated\",\"$defs\":{\"InvoiceGenerated\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"resource_urn\":{\"type\":\"string\"},\"invoice_total\":{\"type\":\"string\"},\"invoice_segment\":{\"type\":\"string\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"resource_urn\",\"invoice_total\",\"invoice_segment\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--invoice-workers.billing-cloudways-sandbox--billing.lifecycle.invoice-generated--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "payment-workers.billing-cloudways.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.failed_month_close_charge",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/FailedMonthCloseCharge\",\"$defs\":{\"FailedMonthCloseCharge\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"resource_urn\":{\"type\":\"string\"},\"amount\":{\"type\":\"string\"},\"invoice_id\":{\"type\":\"integer\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"resource_urn\",\"amount\",\"invoice_id\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--payment-workers.billing-cloudways--billing.lifecycle.failed-month-close-charge--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "account-workers.billing.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.taxation_identity_updated",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/TaxationIdentityUpdated\",\"$defs\":{\"TaxationIdentityUpdated\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"actor_urn\":{\"type\":\"string\"},\"resource_urn\":{\"type\":\"string\"},\"taxation_id\":{\"type\":\"string\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"actor_urn\",\"resource_urn\",\"taxation_id\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--account-workers.billing--billing.lifecycle.taxation-identity-updated--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "payment-workers.billing-cloudways.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.card_charged_failed",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/CardChargeFail\",\"$defs\":{\"CardChargeFail\":{\"properties\":{\"actor_urn\":{\"type\":\"string\"},\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"resource_urn\":{\"type\":\"string\"},\"charge_transaction_id\":{\"type\":\"integer\"},\"decline_code\":{\"type\":\"string\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"actor_urn\",\"event_time\",\"resource_urn\",\"charge_transaction_id\",\"decline_code\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--payment-workers.billing-cloudways--billing.lifecycle.card-charged-failed--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "bandwidth-collector.stage.network-product.service.digitalocean.com",
+      "eventTypeIdentifier": "interconnect.state.remote_routes",
+      "version": "v1",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"title\":\"Route Monitoring Message\",\"type\":\"object\",\"properties\":{\"ia_uuid\":{\"type\":\"string\",\"minLength\":1},\"partner_interconnect_attachment_urn\":{\"type\":\"string\",\"minLength\":1},\"bmp_monitor_msg\":{\"type\":\"object\",\"properties\":{\"tunnel_id\":{\"type\":\"integer\",\"minimum\":1},\"peer_address\":{\"type\":\"string\",\"minLength\":1},\"peer_asn\":{\"type\":\"integer\",\"minimum\":1}},\"required\":[\"tunnel_id\",\"peer_address\",\"peer_asn\"],\"oneOf\":[{\"properties\":{\"withdrawn_routes\":{\"type\":\"object\",\"properties\":{\"routes\":{\"type\":\"array\",\"minItems\":1}},\"required\":[\"routes\"]},\"announced_routes\":{\"type\":\"null\"}},\"required\":[\"withdrawn_routes\"]},{\"properties\":{\"announced_routes\":{\"type\":\"object\",\"properties\":{\"routes\":{\"type\":\"array\",\"minItems\":1},\"next_hop\":{\"type\":\"string\",\"minLength\":1},\"as_path\":{\"type\":\"array\",\"minItems\":1}},\"required\":[\"routes\",\"next_hop\",\"as_path\"]},\"withdrawn_routes\":{\"type\":\"null\"}},\"required\":[\"announced_routes\"]}]}},\"required\":[\"ia_uuid\",\"partner_interconnect_attachment_urn\",\"bmp_monitor_msg\"]}\n",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--bandwidth-collector.stage.network-product--interconnect.state.remote-routes--v1--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "ia_uuid",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "account-workers.billing-cloudways-sandbox.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.account_state_updated",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/AccountStateUpdated\",\"$defs\":{\"AccountStateUpdated\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"resource_urn\":{\"type\":\"string\"},\"state_name\":{\"type\":\"string\"},\"state_value\":{\"type\":\"string\"},\"state_note\":{\"type\":\"string\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"resource_urn\",\"state_name\",\"state_value\",\"state_note\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--account-workers.billing-cloudways-sandbox--billing.lifecycle.account-state-updated--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "account-workers.billing.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.tax_payment_address_updated",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/TaxPaymentAddressUpdateEvent\",\"$defs\":{\"TaxPaymentAddressUpdateEvent\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"resource_urn\":{\"type\":\"string\"},\"billing_address_id\":{\"type\":\"integer\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"resource_urn\",\"billing_address_id\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--account-workers.billing--billing.lifecycle.tax-payment-address-updated--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "account-workers.billing.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.address_updated",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/AddressUpdatedEvent\",\"$defs\":{\"AddressUpdatedEvent\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"resource_urn\":{\"type\":\"string\"},\"billing_address_id\":{\"type\":\"integer\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"resource_urn\",\"billing_address_id\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--account-workers.billing--billing.lifecycle.address-updated--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "account-workers.billing.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.taxation_identity_created",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/TaxationIdentityCreated\",\"$defs\":{\"TaxationIdentityCreated\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"actor_urn\":{\"type\":\"string\"},\"resource_urn\":{\"type\":\"string\"},\"taxation_id\":{\"type\":\"string\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"actor_urn\",\"resource_urn\",\"taxation_id\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--account-workers.billing--billing.lifecycle.taxation-identity-created--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "account-workers.billing.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.account_state_updated",
+      "version": "v1.0.1",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/AccountStateUpdated\",\"$defs\":{\"AccountStateUpdated\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"resource_urn\":{\"type\":\"string\"},\"actor_urn\":{\"type\":\"string\"},\"state_name\":{\"type\":\"string\"},\"state_value\":{\"type\":\"string\"},\"state_note\":{\"type\":\"string\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"resource_urn\",\"actor_urn\",\"state_name\",\"state_value\",\"state_note\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--account-workers.billing--billing.lifecycle.account-state-updated--v1.0.1--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "account-workers.billing.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.awarded_credit",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/AwardCredit\",\"$defs\":{\"AwardCredit\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"actor_urn\":{\"type\":\"string\"},\"resource_urn\":{\"type\":\"string\"},\"expiring_credit\":{\"$ref\":\"#/$defs/Credit\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"actor_urn\",\"resource_urn\",\"expiring_credit\"]},\"Credit\":{\"properties\":{\"id\":{\"type\":\"integer\"},\"description\":{\"type\":\"string\"},\"issue_amount\":{\"type\":\"string\"},\"remaining_amount\":{\"type\":\"string\"},\"category\":{\"type\":\"string\"},\"sub_category\":{\"type\":\"string\"},\"issue_date\":{\"type\":\"string\",\"format\":\"date-time\"},\"expiration_date\":{\"type\":\"string\",\"format\":\"date-time\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"id\",\"description\",\"issue_amount\",\"remaining_amount\",\"category\",\"sub_category\",\"issue_date\",\"expiration_date\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--account-workers.billing--billing.lifecycle.awarded-credit--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "droplet-backup-listener.droplet.service.digitalocean.com",
+      "eventTypeIdentifier": "droplets.billing.backups",
+      "version": "v3",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{  \"$schema\": \"http://json-schema.org/draft/2020-12/schema#\",  \"type\": \"object\",  \"properties\": {    \"UUID\": {      \"type\": \"string\"    },    \"account_urn\": {      \"type\": \"string\"    },    \"resource_urn\": {      \"type\": \"string\"    },    \"sku\": {      \"type\": \"string\"    },    \"region_urn\": {      \"type\": \"string\"    },    \"attributes\": {      \"type\": \"array\",      \"items\": {        \"type\": \"object\",        \"properties\": {          \"key\": {            \"type\": \"string\"          },          \"unit\": {            \"type\": \"integer\"          },          \"quantity\": {            \"type\": \"integer\"          }        },        \"required\": [\"key\", \"unit\", \"quantity\"]      }    },    \"metadata\": {      \"type\": \"array\",      \"items\": {        \"type\": \"object\",        \"properties\": {          \"key\": {            \"type\": \"string\"          },          \"value\": {            \"type\": \"string\"          }        },        \"required\": [\"key\", \"value\"]      }    },    \"EventType\": {      \"type\": \"object\",      \"properties\": {        \"Measurement\": {          \"type\": \"object\",          \"properties\": {            \"start\": {              \"type\": \"object\",              \"properties\": {                \"seconds\": {                  \"type\": \"integer\"                },                \"nanos\": {                  \"type\": \"integer\"                }              },              \"required\": [\"seconds\", \"nanos\"]            },            \"stop\": {              \"type\": \"object\",              \"properties\": {                \"seconds\": {                  \"type\": \"integer\"                },                \"nanos\": {                  \"type\": \"integer\"                }              },              \"required\": [\"seconds\", \"nanos\"]            }          },          \"required\": [\"start\", \"stop\"]        }      },      \"required\": [\"Measurement\"]    }  },  \"required\": [\"UUID\", \"account_urn\", \"resource_urn\", \"sku\", \"region_urn\", \"attributes\", \"EventType\"]}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--droplet-backup-listener.droplet--droplets.billing.backups--v3--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "usageservice.marketplace.service.digitalocean.com",
+      "eventTypeIdentifier": "marketplace.usageservice.usage_request",
+      "version": "v1.0.1",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\": \"http://json-schema.org/draft/2020-12/schema#\", \"type\": \"object\", \"properties\": {\"vendor_uuid\": {\"type\": \"string\"}, \"development_mode\": {\"type\":\"boolean\"}, \"app_uuid\": {\"type\":\"string\"},\"start_date\": {\"type\":\"object\",\"properties\":{\"seconds\":{\"type\":\"integer\"}}},\"end_date\": {\"type\":\"object\",\"properties\":{\"seconds\":{\"type\":\"integer\"}}},\"usage\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"resource_uuid\":{\"type\":\"string\"},\"dimension_slug\":{\"type\":\"string\"},\"quantity\":{\"type\":\"integer\"}}}}}, \"required\": [\"app_uuid\",\"start_date\",\"end_date\",\"usage_data\"]}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--usageservice.marketplace--marketplace.usageservice.usage-request--v1.0.1--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "payment-workers.billing-cloudways-sandbox.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.failed_month_close_charge",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/FailedMonthCloseCharge\",\"$defs\":{\"FailedMonthCloseCharge\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"resource_urn\":{\"type\":\"string\"},\"amount\":{\"type\":\"string\"},\"invoice_id\":{\"type\":\"integer\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"resource_urn\",\"amount\",\"invoice_id\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--payment-workers.billing-cloudways-sandbox--billing.lifecycle.failed-month-close-charge--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "account-workers.billing-cloudways-sandbox.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.taxation_identity_updated",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/TaxationIdentityUpdated\",\"$defs\":{\"TaxationIdentityUpdated\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"actor_urn\":{\"type\":\"string\"},\"resource_urn\":{\"type\":\"string\"},\"taxation_id\":{\"type\":\"string\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"actor_urn\",\"resource_urn\",\"taxation_id\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--account-workers.billing-cloudways-sandbox--billing.lifecycle.taxation-identity-updated--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "payment-workers.billing-cloudways-sandbox.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.payment_method_added",
+      "version": "v1.0.1",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/PaymentMethodAddEvent\",\"$defs\":{\"PaymentMethod\":{\"properties\":{\"payment_method_id\":{\"type\":\"integer\"},\"payment_method_type\":{\"type\":\"string\"},\"external_payment_method_id\":{\"type\":\"string\"},\"fingerprint\":{\"type\":\"string\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"payment_method_id\",\"payment_method_type\",\"external_payment_method_id\",\"fingerprint\"]},\"PaymentMethodAddEvent\":{\"properties\":{\"actor_urn\":{\"type\":\"string\"},\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"resource_urn\":{\"type\":\"string\"},\"success\":{\"type\":\"boolean\"},\"payment_method\":{\"$ref\":\"#/$defs/PaymentMethod\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"actor_urn\",\"event_time\",\"resource_urn\",\"success\",\"payment_method\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--payment-workers.billing-cloudways-sandbox--billing.lifecycle.payment-method-added--v1.0.1--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "account-workers.billing-cloudways.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.taxation_identity_created",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/TaxationIdentityCreated\",\"$defs\":{\"TaxationIdentityCreated\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"actor_urn\":{\"type\":\"string\"},\"resource_urn\":{\"type\":\"string\"},\"taxation_id\":{\"type\":\"string\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"actor_urn\",\"resource_urn\",\"taxation_id\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--account-workers.billing-cloudways--billing.lifecycle.taxation-identity-created--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "account-workers.billing-cloudways.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.taxation_identity_deleted",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/TaxationIdentityDeleted\",\"$defs\":{\"TaxationIdentityDeleted\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"actor_urn\":{\"type\":\"string\"},\"resource_urn\":{\"type\":\"string\"},\"taxation_id\":{\"type\":\"string\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"actor_urn\",\"resource_urn\",\"taxation_id\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--account-workers.billing-cloudways--billing.lifecycle.taxation-identity-deleted--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "account-workers.billing.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.taxation_payment_address_updated",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/TaxationPaymentAddressUpdated\",\"$defs\":{\"TaxationPaymentAddressUpdated\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"resource_urn\":{\"type\":\"string\"},\"billing_address_id\":{\"type\":\"integer\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"resource_urn\",\"billing_address_id\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--account-workers.billing--billing.lifecycle.taxation-payment-address-updated--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "bandwidth-collector.network-product.service.digitalocean.com",
+      "eventTypeIdentifier": "VPC_DROPPED_PACKETS",
+      "version": "v1",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"title\":\"VPC Dropped Packets\",\"type\":\"object\",\"properties\":{\"uuid\":{\"type\":\"string\"},\"source_vpc\":{\"type\":\"string\"},\"result\":{\"type\":\"string\"},\"node\":{\"type\":\"string\"},\"timestamp\":{\"type\":\"string\"},\"packets\":{\"type\":\"number\"}},\"required\":[\"uuid\",\"source_vpc\",\"result\",\"node\",\"timestamp\",\"packets\"]}\n",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--bandwidth-collector.network-product--vpc-dropped-packets--v1--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "source_vpc",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "bandwidth-collector.stage.network-product.service.digitalocean.com",
+      "eventTypeIdentifier": "interconnect_gateways.state.bmp_peer_up_down_notification",
+      "version": "v3",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"title\":\"BMP Peer Up Down Notification Message\",\"type\":\"object\",\"properties\":{\"tunnel_id\":{\"type\":\"integer\",\"minimum\":1},\"bgp_id\":{\"type\":\"string\",\"minLength\":1},\"bmp_peer_down\":{\"$ref\":\"#/$defs/BMPPeerDownNotificationMessage\"},\"bmp_peer_up\":{\"$ref\":\"#/$defs/BMPPeerUpNotificationMessage\"}},\"required\":[\"tunnel_id\",\"bgp_id\"],\"oneOf\":[{\"required\":[\"bmp_peer_down\"]},{\"required\":[\"bmp_peer_up\"]}],\"$defs\":{\"BMPPeerDownNotificationMessage\":{\"type\":\"object\",\"properties\":{\"reason\":{\"type\":\"integer\",\"minimum\":1},\"error_code\":{\"type\":\"integer\",\"minimum\":1,\"maximum\":6},\"error_sub_code\":{\"type\":\"integer\",\"minimum\":0},\"data\":{\"type\":\"string\"}},\"required\":[\"reason\",\"error_code\",\"error_sub_code\",\"data\"]},\"BMPPeerUpNotificationMessage\":{\"type\":\"object\",\"properties\":{\"local_address\":{\"type\":\"string\",\"minLength\":7},\"local_port\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":65535},\"remote_port\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":65535},\"sent_open_msg\":{\"$ref\":\"#/$defs/BGPOpenMessage\"},\"received_open_msg\":{\"$ref\":\"#/$defs/BGPOpenMessage\"}},\"required\":[\"local_address\",\"local_port\",\"remote_port\",\"sent_open_msg\",\"received_open_msg\"]},\"BGPOpenMessage\":{\"type\":\"object\",\"properties\":{\"my_as\":{\"type\":\"integer\",\"minimum\":0},\"hold_time\":{\"type\":\"integer\",\"minimum\":0},\"bgp_id\":{\"type\":\"string\",\"minLength\":1}},\"required\":[\"my_as\",\"hold_time\",\"bgp_id\"]}}}\n",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--bandwidth-collector.stage.network-product--interconnect-gateways.state.bmp-peer-up-down-notification--v3--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "tunnel_id",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "bandwidth-collector.network-product.service.digitalocean.com",
+      "eventTypeIdentifier": "interconnect_gateways.state.bmp_peer_up_down_notification",
+      "version": "v4",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"title\":\"BMP Peer Up Down Notification Message\",\"type\":\"object\",\"properties\":{\"tunnel_id\":{\"type\":\"integer\",\"minimum\":1},\"bgp_id\":{\"type\":\"string\",\"minLength\":1},\"bmp_peer_down\":{\"$ref\":\"#/$defs/BMPPeerDownNotificationMessage\"},\"bmp_peer_up\":{\"$ref\":\"#/$defs/BMPPeerUpNotificationMessage\"}},\"required\":[\"tunnel_id\",\"bgp_id\"],\"oneOf\":[{\"required\":[\"bmp_peer_down\"]},{\"required\":[\"bmp_peer_up\"]}],\"$defs\":{\"BMPPeerDownNotificationMessage\":{\"type\":\"object\",\"properties\":{\"reason\":{\"type\":\"integer\",\"minimum\":1},\"error_code\":{\"type\":\"integer\",\"minimum\":1,\"maximum\":6},\"error_sub_code\":{\"type\":\"integer\",\"minimum\":0},\"data\":{\"type\":[\"string\",\"null\"],\"contentEncoding\":\"base64\"}},\"required\":[\"reason\",\"error_code\",\"error_sub_code\"]},\"BMPPeerUpNotificationMessage\":{\"type\":\"object\",\"properties\":{\"local_address\":{\"type\":\"string\",\"minLength\":7},\"local_port\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":65535},\"remote_port\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":65535},\"sent_open_msg\":{\"$ref\":\"#/$defs/BGPOpenMessage\"},\"received_open_msg\":{\"$ref\":\"#/$defs/BGPOpenMessage\"}},\"required\":[\"local_address\",\"local_port\",\"remote_port\",\"sent_open_msg\",\"received_open_msg\"]},\"BGPOpenMessage\":{\"type\":\"object\",\"properties\":{\"my_as\":{\"type\":\"integer\",\"minimum\":0},\"hold_time\":{\"type\":\"integer\",\"minimum\":0},\"bgp_id\":{\"type\":\"string\",\"minLength\":1}},\"required\":[\"my_as\",\"hold_time\",\"bgp_id\"]}}}\n",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--bandwidth-collector.network-product--interconnect-gateways.state.bmp-peer-up-down-notification--v4--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "tunnel_id",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "payment-workers.billing-cloudways.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.payment_method_added",
+      "version": "v1.0.1",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/PaymentMethodAddEvent\",\"$defs\":{\"PaymentMethod\":{\"properties\":{\"payment_method_id\":{\"type\":\"integer\"},\"payment_method_type\":{\"type\":\"string\"},\"external_payment_method_id\":{\"type\":\"string\"},\"fingerprint\":{\"type\":\"string\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"payment_method_id\",\"payment_method_type\",\"external_payment_method_id\",\"fingerprint\"]},\"PaymentMethodAddEvent\":{\"properties\":{\"actor_urn\":{\"type\":\"string\"},\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"resource_urn\":{\"type\":\"string\"},\"success\":{\"type\":\"boolean\"},\"payment_method\":{\"$ref\":\"#/$defs/PaymentMethod\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"actor_urn\",\"event_time\",\"resource_urn\",\"success\",\"payment_method\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--payment-workers.billing-cloudways--billing.lifecycle.payment-method-added--v1.0.1--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "account-workers.billing-cloudways.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.taxation_payment_address_updated",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/TaxationPaymentAddressUpdated\",\"$defs\":{\"TaxationPaymentAddressUpdated\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"resource_urn\":{\"type\":\"string\"},\"billing_address_id\":{\"type\":\"integer\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"resource_urn\",\"billing_address_id\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--account-workers.billing-cloudways--billing.lifecycle.taxation-payment-address-updated--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "account-workers.billing-cloudways.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.awarded_credit",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/AwardCredit\",\"$defs\":{\"AwardCredit\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"actor_urn\":{\"type\":\"string\"},\"resource_urn\":{\"type\":\"string\"},\"expiring_credit\":{\"$ref\":\"#/$defs/Credit\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"actor_urn\",\"resource_urn\",\"expiring_credit\"]},\"Credit\":{\"properties\":{\"id\":{\"type\":\"integer\"},\"description\":{\"type\":\"string\"},\"issue_amount\":{\"type\":\"string\"},\"remaining_amount\":{\"type\":\"string\"},\"category\":{\"type\":\"string\"},\"sub_category\":{\"type\":\"string\"},\"issue_date\":{\"type\":\"string\",\"format\":\"date-time\"},\"expiration_date\":{\"type\":\"string\",\"format\":\"date-time\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"id\",\"description\",\"issue_amount\",\"remaining_amount\",\"category\",\"sub_category\",\"issue_date\",\"expiration_date\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--account-workers.billing-cloudways--billing.lifecycle.awarded-credit--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "account-workers.billing-cloudways-sandbox.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.tax_payment_address_updated",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/TaxPaymentAddressUpdateEvent\",\"$defs\":{\"TaxPaymentAddressUpdateEvent\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"resource_urn\":{\"type\":\"string\"},\"billing_address_id\":{\"type\":\"integer\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"resource_urn\",\"billing_address_id\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--account-workers.billing-cloudways-sandbox--billing.lifecycle.tax-payment-address-updated--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "account-workers.billing-cloudways-sandbox.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.taxation_identity_deleted",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/TaxationIdentityDeleted\",\"$defs\":{\"TaxationIdentityDeleted\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"actor_urn\":{\"type\":\"string\"},\"resource_urn\":{\"type\":\"string\"},\"taxation_id\":{\"type\":\"string\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"actor_urn\",\"resource_urn\",\"taxation_id\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--account-workers.billing-cloudways-sandbox--billing.lifecycle.taxation-identity-deleted--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "payment-workers.billing-cloudways-sandbox.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.card_charged_failed",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/CardChargeFail\",\"$defs\":{\"CardChargeFail\":{\"properties\":{\"actor_urn\":{\"type\":\"string\"},\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"resource_urn\":{\"type\":\"string\"},\"charge_transaction_id\":{\"type\":\"integer\"},\"decline_code\":{\"type\":\"string\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"actor_urn\",\"event_time\",\"resource_urn\",\"charge_transaction_id\",\"decline_code\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--payment-workers.billing-cloudways-sandbox--billing.lifecycle.card-charged-failed--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "payment-workers.billing.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.card_charged_failed",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/CardChargeFail\",\"$defs\":{\"CardChargeFail\":{\"properties\":{\"actor_urn\":{\"type\":\"string\"},\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"resource_urn\":{\"type\":\"string\"},\"charge_transaction_id\":{\"type\":\"integer\"},\"decline_code\":{\"type\":\"string\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"actor_urn\",\"event_time\",\"resource_urn\",\"charge_transaction_id\",\"decline_code\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--payment-workers.billing--billing.lifecycle.card-charged-failed--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "usageservice.marketplace.service.digitalocean.com",
+      "eventTypeIdentifier": "marketplace.usageservice.usage_event",
+      "version": "v1.0.2",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\": \"http://json-schema.org/draft/2020-12/schema#\", \"type\": \"object\", \"properties\": {\"usage_request_id\":{\"type\":\"integer\"},\"vendor_uuid\": {\"type\": \"string\"}, \"development_mode\": {\"type\":\"boolean\"}, \"app_uuid\": {\"type\":\"string\"},\"start_date\": {\"type\":\"object\",\"properties\":{\"seconds\":{\"type\":\"integer\"}}},\"end_date\": {\"type\":\"object\",\"properties\":{\"seconds\":{\"type\":\"integer\"}}},\"resource_uuid\":{\"type\":\"string\"},\"dimension_slug\":{\"type\":\"string\"},\"quantity\":{\"type\":\"integer\"}}, \"required\": [\"usage_request_id\",\"app_uuid\",\"start_date\",\"end_date\",\"resource_uuid\",\"dimension_slug\",\"quantity\"]}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--usageservice.marketplace--marketplace.usageservice.usage-event--v1.0.2--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "usageservice.marketplace.service.digitalocean.com",
+      "eventTypeIdentifier": "marketplace.billing.usage_event",
+      "version": "v1.0.2",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"http://json-schema.org/draft/2020-12/schema#\",\"type\":\"object\",\"properties\":{\"UUID\":{\"type\":\"string\"},\"account_urn\":{\"type\":\"string\"},\"resource_urn\":{\"type\":\"string\"},\"sku\":{\"type\":\"string\"},\"region_urn\":{\"type\":\"string\"},\"attributes\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"key\":{\"type\":\"string\"},\"unit\":{\"type\":\"number\"},\"quantity\":{\"type\":\"number\"}},\"required\":[\"key\",\"unit\",\"quantity\"]}},\"metadata\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"key\":{\"type\":\"string\"},\"value\":{\"type\":\"string\"}},\"required\":[\"key\",\"value\"]}},\"EventType\":{\"Measurement\":{\"start\":{\"type\":\"object\",\"properties\":{\"seconds\":{\"type\":\"integer\"}}},\"stop\":{\"type\":\"object\",\"properties\":{\"seconds\":{\"type\":\"integer\"}}}}}},\"required\":[\"UUID\",\"account_urn\",\"resource_urn\",\"sku\",\"attributes\"]}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--usageservice.marketplace--marketplace.billing.usage-event--v1.0.2--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "payment-workers.billing.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.payment_method_added",
+      "version": "v1.0.1",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/PaymentMethodAddEvent\",\"$defs\":{\"PaymentMethod\":{\"properties\":{\"payment_method_id\":{\"type\":\"integer\"},\"payment_method_type\":{\"type\":\"string\"},\"external_payment_method_id\":{\"type\":\"string\"},\"fingerprint\":{\"type\":\"string\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"payment_method_id\",\"payment_method_type\",\"external_payment_method_id\",\"fingerprint\"]},\"PaymentMethodAddEvent\":{\"properties\":{\"actor_urn\":{\"type\":\"string\"},\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"resource_urn\":{\"type\":\"string\"},\"success\":{\"type\":\"boolean\"},\"payment_method\":{\"$ref\":\"#/$defs/PaymentMethod\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"actor_urn\",\"event_time\",\"resource_urn\",\"success\",\"payment_method\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--payment-workers.billing--billing.lifecycle.payment-method-added--v1.0.1--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "payment-workers.billing.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.failed_month_close_charge",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/FailedMonthCloseCharge\",\"$defs\":{\"FailedMonthCloseCharge\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"resource_urn\":{\"type\":\"string\"},\"amount\":{\"type\":\"string\"},\"invoice_id\":{\"type\":\"integer\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"resource_urn\",\"amount\",\"invoice_id\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--payment-workers.billing--billing.lifecycle.failed-month-close-charge--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "account-workers.billing-cloudways.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.taxation_identity_updated",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/TaxationIdentityUpdated\",\"$defs\":{\"TaxationIdentityUpdated\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"actor_urn\":{\"type\":\"string\"},\"resource_urn\":{\"type\":\"string\"},\"taxation_id\":{\"type\":\"string\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"actor_urn\",\"resource_urn\",\"taxation_id\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--account-workers.billing-cloudways--billing.lifecycle.taxation-identity-updated--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "account-workers.billing-cloudways-sandbox.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.account_state_updated",
+      "version": "v1.0.1",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/AccountStateUpdated\",\"$defs\":{\"AccountStateUpdated\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"resource_urn\":{\"type\":\"string\"},\"actor_urn\":{\"type\":\"string\"},\"state_name\":{\"type\":\"string\"},\"state_value\":{\"type\":\"string\"},\"state_note\":{\"type\":\"string\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"resource_urn\",\"actor_urn\",\"state_name\",\"state_value\",\"state_note\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--account-workers.billing-cloudways-sandbox--billing.lifecycle.account-state-updated--v1.0.1--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "bandwidth-collector.network-product.service.digitalocean.com",
+      "eventTypeIdentifier": "INTERCONNECT_USAGE",
+      "version": "v1",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"title\":\"Interconnect Usage\",\"type\":\"object\",\"properties\":{\"uuid\":{\"type\":\"string\"},\"account_urn\":{\"type\":\"string\"},\"resource_urn\":{\"type\":\"string\"},\"sku\":{\"type\":\"string\"},\"region_urn\":{\"type\":\"string\"},\"event_type\":{\"type\":\"string\"},\"attributes\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"key\":{\"type\":\"string\"},\"unit\":{\"type\":\"string\"},\"quantity\":{\"type\":\"number\"}},\"required\":[\"key\",\"unit\",\"quantity\"]}},\"measurement\":{\"type\":\"object\",\"properties\":{\"start\":{\"type\":\"string\"},\"stop\":{\"type\":\"string\"}},\"required\":[\"start\",\"stop\"]},\"metadata\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"key\":{\"type\":\"string\"},\"value\":{\"type\":\"string\"}},\"required\":[\"key\",\"value\"]}}},\"required\":[\"uuid\",\"account_urn\",\"resource_urn\",\"sku\",\"region_urn\",\"event_type\",\"measurement\"]}\n",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--bandwidth-collector.network-product--interconnect-usage--v1--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "resource_urn",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "account-workers.billing-cloudways-sandbox.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.awarded_credit",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/AwardCredit\",\"$defs\":{\"AwardCredit\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"actor_urn\":{\"type\":\"string\"},\"resource_urn\":{\"type\":\"string\"},\"expiring_credit\":{\"$ref\":\"#/$defs/Credit\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"actor_urn\",\"resource_urn\",\"expiring_credit\"]},\"Credit\":{\"properties\":{\"id\":{\"type\":\"integer\"},\"description\":{\"type\":\"string\"},\"issue_amount\":{\"type\":\"string\"},\"remaining_amount\":{\"type\":\"string\"},\"category\":{\"type\":\"string\"},\"sub_category\":{\"type\":\"string\"},\"issue_date\":{\"type\":\"string\",\"format\":\"date-time\"},\"expiration_date\":{\"type\":\"string\",\"format\":\"date-time\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"id\",\"description\",\"issue_amount\",\"remaining_amount\",\"category\",\"sub_category\",\"issue_date\",\"expiration_date\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--account-workers.billing-cloudways-sandbox--billing.lifecycle.awarded-credit--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "account-workers.billing.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.extended_credit_expiration",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/ExtendCreditExpiration\",\"$defs\":{\"ExtendCreditExpiration\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"actor_urn\":{\"type\":\"string\"},\"resource_urn\":{\"type\":\"string\"},\"credit_id\":{\"type\":\"integer\"},\"old_expiration\":{\"type\":\"string\",\"format\":\"date-time\"},\"new_expiration\":{\"type\":\"string\",\"format\":\"date-time\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"actor_urn\",\"resource_urn\",\"credit_id\",\"old_expiration\",\"new_expiration\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--account-workers.billing--billing.lifecycle.extended-credit-expiration--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "invoice-workers.billing-cloudways.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.invoice_generated",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/InvoiceGenerated\",\"$defs\":{\"InvoiceGenerated\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"resource_urn\":{\"type\":\"string\"},\"invoice_total\":{\"type\":\"string\"},\"invoice_segment\":{\"type\":\"string\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"resource_urn\",\"invoice_total\",\"invoice_segment\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--invoice-workers.billing-cloudways--billing.lifecycle.invoice-generated--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "account-workers.billing-cloudways-sandbox.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.taxation_identity_created",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/TaxationIdentityCreated\",\"$defs\":{\"TaxationIdentityCreated\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"actor_urn\":{\"type\":\"string\"},\"resource_urn\":{\"type\":\"string\"},\"taxation_id\":{\"type\":\"string\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"actor_urn\",\"resource_urn\",\"taxation_id\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--account-workers.billing-cloudways-sandbox--billing.lifecycle.taxation-identity-created--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "bandwidth-collector.network-product.service.digitalocean.com",
+      "eventTypeIdentifier": "INTERCONNECT_ATTACHMENT_BGP_STATUS",
+      "version": "v1",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"title\":\"Interconnect Attachment BGP Status\",\"type\":\"object\",\"properties\":{\"ia_uuid\":{\"type\":\"string\"},\"partner_interconnect_attachment_urn\":{\"type\":\"string\"},\"igr\":{\"type\":\"string\"},\"status\":{\"type\":\"boolean\"},\"timestamp\":{\"type\":\"string\"}},\"required\":[\"ia_uuid\",\"partner_interconnect_attachment_urn\",\"igr\",\"status\",\"timestamp\"]}\n",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--bandwidth-collector.network-product--interconnect-attachment-bgp-status--v1--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "ia_uuid",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "bandwidth-collector.stage.network-product.service.digitalocean.com",
+      "eventTypeIdentifier": "interconnect_gateways.state.bmp_route_monitoring",
+      "version": "v3",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"title\":\"BMP Route Monitoring\",\"type\":\"object\",\"properties\":{\"tunnel_id\":{\"type\":\"integer\",\"minimum\":1},\"peer_address\":{\"type\":\"string\",\"minLength\":1},\"peer_asn\":{\"type\":\"integer\",\"minimum\":1}},\"required\":[\"tunnel_id\",\"peer_address\",\"peer_asn\"],\"oneOf\":[{\"properties\":{\"withdrawn_routes\":{\"$ref\":\"#/$defs/WithdrawnRoutes\"},\"announced_routes\":{\"type\":\"null\"}},\"required\":[\"withdrawn_routes\"]},{\"properties\":{\"announced_routes\":{\"$ref\":\"#/$defs/AnnouncedRoutes\"},\"withdrawn_routes\":{\"type\":\"null\"}},\"required\":[\"announced_routes\"]}],\"$defs\":{\"WithdrawnRoutes\":{\"type\":\"object\",\"properties\":{\"routes\":{\"type\":\"array\",\"minItems\":1}},\"required\":[\"routes\"]},\"AnnouncedRoutes\":{\"type\":\"object\",\"properties\":{\"routes\":{\"type\":\"array\",\"minItems\":1},\"next_hop\":{\"type\":\"string\",\"minLength\":1},\"as_path\":{\"type\":\"array\",\"minItems\":1}},\"required\":[\"routes\",\"next_hop\",\"as_path\"]}}}\n",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--bandwidth-collector.stage.network-product--interconnect-gateways.state.bmp-route-monitoring--v3--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "tunnel_id",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "bandwidth-collector.network-product.service.digitalocean.com",
+      "eventTypeIdentifier": "interconnect.billing.partner_interconnect_billing_usage",
+      "version": "v1",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"title\":\"Partner Interconnect Billing Usage\",\"type\":\"object\",\"properties\":{\"uuid\":{\"type\":\"string\"},\"account_urn\":{\"type\":\"string\"},\"resource_urn\":{\"type\":\"string\"},\"sku\":{\"type\":\"string\"},\"region_urn\":{\"type\":\"string\"},\"event_type\":{\"type\":\"string\"},\"attributes\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"key\":{\"type\":\"string\"},\"unit\":{\"type\":\"string\"},\"quantity\":{\"type\":\"number\"}},\"required\":[\"key\",\"unit\",\"quantity\"]}},\"measurement\":{\"type\":\"object\",\"properties\":{\"start\":{\"type\":\"string\"},\"stop\":{\"type\":\"string\"}},\"required\":[\"start\",\"stop\"]},\"metadata\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"key\":{\"type\":\"string\"},\"value\":{\"type\":\"string\"}},\"required\":[\"key\",\"value\"]}}},\"required\":[\"uuid\",\"account_urn\",\"resource_urn\",\"sku\",\"region_urn\",\"event_type\",\"measurement\"]}\n",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--bandwidth-collector.network-product--interconnect.billing.partner-interconnect-billing-usage--v1--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "resource_urn",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "account-workers.billing-cloudways-sandbox.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.taxation_payment_address_updated",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/TaxationPaymentAddressUpdated\",\"$defs\":{\"TaxationPaymentAddressUpdated\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"resource_urn\":{\"type\":\"string\"},\"billing_address_id\":{\"type\":\"integer\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"resource_urn\",\"billing_address_id\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--account-workers.billing-cloudways-sandbox--billing.lifecycle.taxation-payment-address-updated--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "account-workers.billing.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.expired_credit",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/ExpireCredit\",\"$defs\":{\"Credit\":{\"properties\":{\"id\":{\"type\":\"integer\"},\"description\":{\"type\":\"string\"},\"issue_amount\":{\"type\":\"string\"},\"remaining_amount\":{\"type\":\"string\"},\"category\":{\"type\":\"string\"},\"sub_category\":{\"type\":\"string\"},\"issue_date\":{\"type\":\"string\",\"format\":\"date-time\"},\"expiration_date\":{\"type\":\"string\",\"format\":\"date-time\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"id\",\"description\",\"issue_amount\",\"remaining_amount\",\"category\",\"sub_category\",\"issue_date\",\"expiration_date\"]},\"ExpireCredit\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"actor_urn\":{\"type\":\"string\"},\"resource_urn\":{\"type\":\"string\"},\"expiring_credit\":{\"$ref\":\"#/$defs/Credit\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"actor_urn\",\"resource_urn\",\"expiring_credit\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--account-workers.billing--billing.lifecycle.expired-credit--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "account-workers.billing-cloudways.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.account_state_updated",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/AccountStateUpdated\",\"$defs\":{\"AccountStateUpdated\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"resource_urn\":{\"type\":\"string\"},\"state_name\":{\"type\":\"string\"},\"state_value\":{\"type\":\"string\"},\"state_note\":{\"type\":\"string\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"resource_urn\",\"state_name\",\"state_value\",\"state_note\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--account-workers.billing-cloudways--billing.lifecycle.account-state-updated--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "account-workers.billing-cloudways.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.expired_credit",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/ExpireCredit\",\"$defs\":{\"Credit\":{\"properties\":{\"id\":{\"type\":\"integer\"},\"description\":{\"type\":\"string\"},\"issue_amount\":{\"type\":\"string\"},\"remaining_amount\":{\"type\":\"string\"},\"category\":{\"type\":\"string\"},\"sub_category\":{\"type\":\"string\"},\"issue_date\":{\"type\":\"string\",\"format\":\"date-time\"},\"expiration_date\":{\"type\":\"string\",\"format\":\"date-time\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"id\",\"description\",\"issue_amount\",\"remaining_amount\",\"category\",\"sub_category\",\"issue_date\",\"expiration_date\"]},\"ExpireCredit\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"actor_urn\":{\"type\":\"string\"},\"resource_urn\":{\"type\":\"string\"},\"expiring_credit\":{\"$ref\":\"#/$defs/Credit\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"actor_urn\",\"resource_urn\",\"expiring_credit\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--account-workers.billing-cloudways--billing.lifecycle.expired-credit--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "account-workers.billing-cloudways-sandbox.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.expired_credit",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/ExpireCredit\",\"$defs\":{\"Credit\":{\"properties\":{\"id\":{\"type\":\"integer\"},\"description\":{\"type\":\"string\"},\"issue_amount\":{\"type\":\"string\"},\"remaining_amount\":{\"type\":\"string\"},\"category\":{\"type\":\"string\"},\"sub_category\":{\"type\":\"string\"},\"issue_date\":{\"type\":\"string\",\"format\":\"date-time\"},\"expiration_date\":{\"type\":\"string\",\"format\":\"date-time\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"id\",\"description\",\"issue_amount\",\"remaining_amount\",\"category\",\"sub_category\",\"issue_date\",\"expiration_date\"]},\"ExpireCredit\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"actor_urn\":{\"type\":\"string\"},\"resource_urn\":{\"type\":\"string\"},\"expiring_credit\":{\"$ref\":\"#/$defs/Credit\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"actor_urn\",\"resource_urn\",\"expiring_credit\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--account-workers.billing-cloudways-sandbox--billing.lifecycle.expired-credit--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "bandwidth-collector.network-product.service.digitalocean.com",
+      "eventTypeIdentifier": "PEERING_USAGE",
+      "version": "v1",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"title\":\"Peering Usage\",\"type\":\"object\",\"properties\":{\"uuid\":{\"type\":\"string\"},\"peering_urn\":{\"type\":\"string\"},\"timestamp\":{\"type\":\"string\"},\"src_region_urn\":{\"type\":\"string\"},\"dst_region_urn\":{\"type\":\"string\"},\"src_vpc_urn\":{\"type\":\"string\"},\"dst_vpc_urn\":{\"type\":\"string\"},\"direction\":{\"type\":\"string\"},\"hostname\":{\"type\":\"string\"},\"account_urn\":{\"type\":\"string\"},\"value\":{\"type\":\"number\"},\"unit\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"sku\":{\"type\":\"string\"},\"internal_customer\":{\"type\":\"boolean\"}},\"required\":[\"uuid\",\"peering_urn\",\"timestamp\",\"src_region_urn\",\"dst_region_urn\",\"src_vpc_urn\",\"dst_vpc_urn\",\"direction\",\"hostname\",\"account_urn\",\"value\",\"unit\",\"type\",\"sku\"]}\n",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--bandwidth-collector.network-product--peering-usage--v1--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "peering_urn",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "account-workers.billing.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.account_state_updated",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/AccountStateUpdated\",\"$defs\":{\"AccountStateUpdated\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"resource_urn\":{\"type\":\"string\"},\"state_name\":{\"type\":\"string\"},\"state_value\":{\"type\":\"string\"},\"state_note\":{\"type\":\"string\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"resource_urn\",\"state_name\",\"state_value\",\"state_note\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--account-workers.billing--billing.lifecycle.account-state-updated--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "bandwidth-collector.network-product.service.digitalocean.com",
+      "eventTypeIdentifier": "TRANSIT_GATEWAY_BANDWIDTH",
+      "version": "v1",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"title\":\"Transit Gateway Bandwidth\",\"type\":\"object\",\"properties\":{\"uuid\":{\"type\":\"string\"},\"src_tunnel_id\":{\"type\":\"number\"},\"dst_tunnel_id\":{\"type\":\"number\"},\"src_region\":{\"type\":\"string\"},\"dst_region\":{\"type\":\"string\"},\"node\":{\"type\":\"string\"},\"timestamp\":{\"type\":\"string\"},\"bytes\":{\"type\":\"number\"}},\"required\":[\"uuid\",\"src_tunnel_id\",\"dst_tunnel_id\",\"src_region\",\"dst_region\",\"node\",\"timestamp\",\"bytes\"]}\n",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--bandwidth-collector.network-product--transit-gateway-bandwidth--v1--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "bandwidth-collector.network-product.service.digitalocean.com",
+      "eventTypeIdentifier": "interconnect_gateways.state.bmp_route_monitoring",
+      "version": "v3",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"title\":\"BMP Route Monitoring\",\"type\":\"object\",\"properties\":{\"tunnel_id\":{\"type\":\"integer\",\"minimum\":1},\"peer_address\":{\"type\":\"string\",\"minLength\":1},\"peer_asn\":{\"type\":\"integer\",\"minimum\":1}},\"required\":[\"tunnel_id\",\"peer_address\",\"peer_asn\"],\"oneOf\":[{\"properties\":{\"withdrawn_routes\":{\"$ref\":\"#/$defs/WithdrawnRoutes\"},\"announced_routes\":{\"type\":\"null\"}},\"required\":[\"withdrawn_routes\"]},{\"properties\":{\"announced_routes\":{\"$ref\":\"#/$defs/AnnouncedRoutes\"},\"withdrawn_routes\":{\"type\":\"null\"}},\"required\":[\"announced_routes\"]}],\"$defs\":{\"WithdrawnRoutes\":{\"type\":\"object\",\"properties\":{\"routes\":{\"type\":\"array\",\"minItems\":1}},\"required\":[\"routes\"]},\"AnnouncedRoutes\":{\"type\":\"object\",\"properties\":{\"routes\":{\"type\":\"array\",\"minItems\":1},\"next_hop\":{\"type\":\"string\",\"minLength\":1},\"as_path\":{\"type\":\"array\",\"minItems\":1}},\"required\":[\"routes\",\"next_hop\",\"as_path\"]}}}\n",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--bandwidth-collector.network-product--interconnect-gateways.state.bmp-route-monitoring--v3--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "tunnel_id",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "usageservice.marketplace.service.digitalocean.com",
+      "eventTypeIdentifier": "marketplace.usageservice.usage_request",
+      "version": "v1.0.2",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\": \"http://json-schema.org/draft/2020-12/schema#\", \"type\": \"object\", \"properties\": {\"vendor_uuid\": {\"type\": \"string\"}, \"development_mode\": {\"type\":\"boolean\"}, \"app_uuid\": {\"type\":\"string\"},\"start_date\": {\"type\":\"object\",\"properties\":{\"seconds\":{\"type\":\"integer\"}}},\"end_date\": {\"type\":\"object\",\"properties\":{\"seconds\":{\"type\":\"integer\"}}},\"usage\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"resource_uuid\":{\"type\":\"string\"},\"dimension_slug\":{\"type\":\"string\"},\"quantity\":{\"type\":\"integer\"}}}}}, \"required\": [\"app_uuid\",\"start_date\",\"end_date\",\"usage_data\"]}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--usageservice.marketplace--marketplace.usageservice.usage-request--v1.0.2--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "account-workers.billing.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.taxation_identity_deleted",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/TaxationIdentityDeleted\",\"$defs\":{\"TaxationIdentityDeleted\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"actor_urn\":{\"type\":\"string\"},\"resource_urn\":{\"type\":\"string\"},\"taxation_id\":{\"type\":\"string\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"actor_urn\",\"resource_urn\",\"taxation_id\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--account-workers.billing--billing.lifecycle.taxation-identity-deleted--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    },
+    {
+      "producerId": "account-workers.billing-cloudways.service.digitalocean.com",
+      "eventTypeIdentifier": "billing.lifecycle.extended_credit_expiration",
+      "version": "v1.0.0",
+      "status": "EVENT_TYPE_VERSION_STATUS_READY_FOR_EMISSION",
+      "schemaFormat": "SCHEMA_FORMAT_JSON",
+      "schema": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"$ref\":\"#/$defs/ExtendCreditExpiration\",\"$defs\":{\"ExtendCreditExpiration\":{\"properties\":{\"event_time\":{\"type\":\"string\",\"format\":\"date-time\"},\"actor_urn\":{\"type\":\"string\"},\"resource_urn\":{\"type\":\"string\"},\"credit_id\":{\"type\":\"integer\"},\"old_expiration\":{\"type\":\"string\",\"format\":\"date-time\"},\"new_expiration\":{\"type\":\"string\",\"format\":\"date-time\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"event_time\",\"actor_urn\",\"resource_urn\",\"credit_id\",\"old_expiration\",\"new_expiration\"]}}}",
+      "mtlsConsumptionRestriction": "no_restriction",
+      "kafkaTopics": [
+        "ept--account-workers.billing-cloudways--billing.lifecycle.extended-credit-expiration--v1.0.0--nyc3",
+        "eventing-nyc3"
+      ],
+      "partitionKey": "no_order",
+      "metadata": {
+        "requiresArchival": true,
+        "publishToLce": false
+      }
+    }
+  ]
+}

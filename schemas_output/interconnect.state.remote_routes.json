@@ -1,0 +1,198 @@
+[
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Route Monitoring Message",
+    "type": "object",
+    "properties": {
+      "ia_uuid": {
+        "type": "string",
+        "minLength": 1
+      },
+      "partner_interconnect_attachment_urn": {
+        "type": "string",
+        "minLength": 1
+      },
+      "bmp_monitor_msg": {
+        "type": "object",
+        "properties": {
+          "tunnel_id": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "peer_address": {
+            "type": "string",
+            "minLength": 1
+          },
+          "peer_asn": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "required": [
+          "tunnel_id",
+          "peer_address",
+          "peer_asn"
+        ],
+        "oneOf": [
+          {
+            "properties": {
+              "withdrawn_routes": {
+                "type": "object",
+                "properties": {
+                  "routes": {
+                    "type": "array",
+                    "minItems": 1
+                  }
+                },
+                "required": [
+                  "routes"
+                ]
+              },
+              "announced_routes": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "withdrawn_routes"
+            ]
+          },
+          {
+            "properties": {
+              "announced_routes": {
+                "type": "object",
+                "properties": {
+                  "routes": {
+                    "type": "array",
+                    "minItems": 1
+                  },
+                  "next_hop": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "as_path": {
+                    "type": "array",
+                    "minItems": 1
+                  }
+                },
+                "required": [
+                  "routes",
+                  "next_hop",
+                  "as_path"
+                ]
+              },
+              "withdrawn_routes": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "announced_routes"
+            ]
+          }
+        ]
+      }
+    },
+    "required": [
+      "ia_uuid",
+      "partner_interconnect_attachment_urn",
+      "bmp_monitor_msg"
+    ]
+  },
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Route Monitoring Message",
+    "type": "object",
+    "properties": {
+      "ia_uuid": {
+        "type": "string",
+        "minLength": 1
+      },
+      "partner_interconnect_attachment_urn": {
+        "type": "string",
+        "minLength": 1
+      },
+      "bmp_monitor_msg": {
+        "type": "object",
+        "properties": {
+          "tunnel_id": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "peer_address": {
+            "type": "string",
+            "minLength": 1
+          },
+          "peer_asn": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "required": [
+          "tunnel_id",
+          "peer_address",
+          "peer_asn"
+        ],
+        "oneOf": [
+          {
+            "properties": {
+              "withdrawn_routes": {
+                "type": "object",
+                "properties": {
+                  "routes": {
+                    "type": "array",
+                    "minItems": 1
+                  }
+                },
+                "required": [
+                  "routes"
+                ]
+              },
+              "announced_routes": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "withdrawn_routes"
+            ]
+          },
+          {
+            "properties": {
+              "announced_routes": {
+                "type": "object",
+                "properties": {
+                  "routes": {
+                    "type": "array",
+                    "minItems": 1
+                  },
+                  "next_hop": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "as_path": {
+                    "type": "array",
+                    "minItems": 1
+                  }
+                },
+                "required": [
+                  "routes",
+                  "next_hop",
+                  "as_path"
+                ]
+              },
+              "withdrawn_routes": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "announced_routes"
+            ]
+          }
+        ]
+      }
+    },
+    "required": [
+      "ia_uuid",
+      "partner_interconnect_attachment_urn",
+      "bmp_monitor_msg"
+    ]
+  }
+]

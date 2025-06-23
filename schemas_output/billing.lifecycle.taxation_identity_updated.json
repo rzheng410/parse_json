@@ -1,0 +1,95 @@
+[
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$ref": "#/$defs/TaxationIdentityUpdated",
+    "$defs": {
+      "TaxationIdentityUpdated": {
+        "properties": {
+          "event_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "actor_urn": {
+            "type": "string"
+          },
+          "resource_urn": {
+            "type": "string"
+          },
+          "taxation_id": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "event_time",
+          "actor_urn",
+          "resource_urn",
+          "taxation_id"
+        ]
+      }
+    }
+  },
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$ref": "#/$defs/TaxationIdentityUpdated",
+    "$defs": {
+      "TaxationIdentityUpdated": {
+        "properties": {
+          "event_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "actor_urn": {
+            "type": "string"
+          },
+          "resource_urn": {
+            "type": "string"
+          },
+          "taxation_id": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "event_time",
+          "actor_urn",
+          "resource_urn",
+          "taxation_id"
+        ]
+      }
+    }
+  },
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$ref": "#/$defs/TaxationIdentityUpdated",
+    "$defs": {
+      "TaxationIdentityUpdated": {
+        "properties": {
+          "event_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "actor_urn": {
+            "type": "string"
+          },
+          "resource_urn": {
+            "type": "string"
+          },
+          "taxation_id": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "event_time",
+          "actor_urn",
+          "resource_urn",
+          "taxation_id"
+        ]
+      }
+    }
+  }
+]

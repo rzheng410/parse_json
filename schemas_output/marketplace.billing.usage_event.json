@@ -1,0 +1,90 @@
+[
+  {
+    "$schema": "http://json-schema.org/draft/2020-12/schema#",
+    "type": "object",
+    "properties": {
+      "UUID": {
+        "type": "string"
+      },
+      "account_urn": {
+        "type": "string"
+      },
+      "resource_urn": {
+        "type": "string"
+      },
+      "sku": {
+        "type": "string"
+      },
+      "region_urn": {
+        "type": "string"
+      },
+      "attributes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "key": {
+              "type": "string"
+            },
+            "unit": {
+              "type": "number"
+            },
+            "quantity": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "key",
+            "unit",
+            "quantity"
+          ]
+        }
+      },
+      "metadata": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "key": {
+              "type": "string"
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "key",
+            "value"
+          ]
+        }
+      },
+      "EventType": {
+        "Measurement": {
+          "start": {
+            "type": "object",
+            "properties": {
+              "seconds": {
+                "type": "integer"
+              }
+            }
+          },
+          "stop": {
+            "type": "object",
+            "properties": {
+              "seconds": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    },
+    "required": [
+      "UUID",
+      "account_urn",
+      "resource_urn",
+      "sku",
+      "attributes"
+    ]
+  }
+]

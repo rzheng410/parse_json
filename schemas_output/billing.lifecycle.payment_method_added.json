@@ -1,0 +1,179 @@
+[
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$ref": "#/$defs/PaymentMethodAddEvent",
+    "$defs": {
+      "PaymentMethod": {
+        "properties": {
+          "payment_method_id": {
+            "type": "integer"
+          },
+          "payment_method_type": {
+            "type": "string"
+          },
+          "external_payment_method_id": {
+            "type": "string"
+          },
+          "fingerprint": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "payment_method_id",
+          "payment_method_type",
+          "external_payment_method_id",
+          "fingerprint"
+        ]
+      },
+      "PaymentMethodAddEvent": {
+        "properties": {
+          "actor_urn": {
+            "type": "string"
+          },
+          "event_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "resource_urn": {
+            "type": "string"
+          },
+          "success": {
+            "type": "boolean"
+          },
+          "payment_method": {
+            "$ref": "#/$defs/PaymentMethod"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "actor_urn",
+          "event_time",
+          "resource_urn",
+          "success",
+          "payment_method"
+        ]
+      }
+    }
+  },
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$ref": "#/$defs/PaymentMethodAddEvent",
+    "$defs": {
+      "PaymentMethod": {
+        "properties": {
+          "payment_method_id": {
+            "type": "integer"
+          },
+          "payment_method_type": {
+            "type": "string"
+          },
+          "external_payment_method_id": {
+            "type": "string"
+          },
+          "fingerprint": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "payment_method_id",
+          "payment_method_type",
+          "external_payment_method_id",
+          "fingerprint"
+        ]
+      },
+      "PaymentMethodAddEvent": {
+        "properties": {
+          "actor_urn": {
+            "type": "string"
+          },
+          "event_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "resource_urn": {
+            "type": "string"
+          },
+          "success": {
+            "type": "boolean"
+          },
+          "payment_method": {
+            "$ref": "#/$defs/PaymentMethod"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "actor_urn",
+          "event_time",
+          "resource_urn",
+          "success",
+          "payment_method"
+        ]
+      }
+    }
+  },
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$ref": "#/$defs/PaymentMethodAddEvent",
+    "$defs": {
+      "PaymentMethod": {
+        "properties": {
+          "payment_method_id": {
+            "type": "integer"
+          },
+          "payment_method_type": {
+            "type": "string"
+          },
+          "external_payment_method_id": {
+            "type": "string"
+          },
+          "fingerprint": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "payment_method_id",
+          "payment_method_type",
+          "external_payment_method_id",
+          "fingerprint"
+        ]
+      },
+      "PaymentMethodAddEvent": {
+        "properties": {
+          "actor_urn": {
+            "type": "string"
+          },
+          "event_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "resource_urn": {
+            "type": "string"
+          },
+          "success": {
+            "type": "boolean"
+          },
+          "payment_method": {
+            "$ref": "#/$defs/PaymentMethod"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "actor_urn",
+          "event_time",
+          "resource_urn",
+          "success",
+          "payment_method"
+        ]
+      }
+    }
+  }
+]

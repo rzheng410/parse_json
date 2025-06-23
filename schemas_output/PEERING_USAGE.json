@@ -1,0 +1,70 @@
+[
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Peering Usage",
+    "type": "object",
+    "properties": {
+      "uuid": {
+        "type": "string"
+      },
+      "peering_urn": {
+        "type": "string"
+      },
+      "timestamp": {
+        "type": "string"
+      },
+      "src_region_urn": {
+        "type": "string"
+      },
+      "dst_region_urn": {
+        "type": "string"
+      },
+      "src_vpc_urn": {
+        "type": "string"
+      },
+      "dst_vpc_urn": {
+        "type": "string"
+      },
+      "direction": {
+        "type": "string"
+      },
+      "hostname": {
+        "type": "string"
+      },
+      "account_urn": {
+        "type": "string"
+      },
+      "value": {
+        "type": "number"
+      },
+      "unit": {
+        "type": "string"
+      },
+      "type": {
+        "type": "string"
+      },
+      "sku": {
+        "type": "string"
+      },
+      "internal_customer": {
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "uuid",
+      "peering_urn",
+      "timestamp",
+      "src_region_urn",
+      "dst_region_urn",
+      "src_vpc_urn",
+      "dst_vpc_urn",
+      "direction",
+      "hostname",
+      "account_urn",
+      "value",
+      "unit",
+      "type",
+      "sku"
+    ]
+  }
+]

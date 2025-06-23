@@ -1,0 +1,221 @@
+[
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$ref": "#/$defs/AwardCredit",
+    "$defs": {
+      "AwardCredit": {
+        "properties": {
+          "event_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "actor_urn": {
+            "type": "string"
+          },
+          "resource_urn": {
+            "type": "string"
+          },
+          "expiring_credit": {
+            "$ref": "#/$defs/Credit"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "event_time",
+          "actor_urn",
+          "resource_urn",
+          "expiring_credit"
+        ]
+      },
+      "Credit": {
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "description": {
+            "type": "string"
+          },
+          "issue_amount": {
+            "type": "string"
+          },
+          "remaining_amount": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "sub_category": {
+            "type": "string"
+          },
+          "issue_date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "expiration_date": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "description",
+          "issue_amount",
+          "remaining_amount",
+          "category",
+          "sub_category",
+          "issue_date",
+          "expiration_date"
+        ]
+      }
+    }
+  },
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$ref": "#/$defs/AwardCredit",
+    "$defs": {
+      "AwardCredit": {
+        "properties": {
+          "event_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "actor_urn": {
+            "type": "string"
+          },
+          "resource_urn": {
+            "type": "string"
+          },
+          "expiring_credit": {
+            "$ref": "#/$defs/Credit"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "event_time",
+          "actor_urn",
+          "resource_urn",
+          "expiring_credit"
+        ]
+      },
+      "Credit": {
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "description": {
+            "type": "string"
+          },
+          "issue_amount": {
+            "type": "string"
+          },
+          "remaining_amount": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "sub_category": {
+            "type": "string"
+          },
+          "issue_date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "expiration_date": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "description",
+          "issue_amount",
+          "remaining_amount",
+          "category",
+          "sub_category",
+          "issue_date",
+          "expiration_date"
+        ]
+      }
+    }
+  },
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$ref": "#/$defs/AwardCredit",
+    "$defs": {
+      "AwardCredit": {
+        "properties": {
+          "event_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "actor_urn": {
+            "type": "string"
+          },
+          "resource_urn": {
+            "type": "string"
+          },
+          "expiring_credit": {
+            "$ref": "#/$defs/Credit"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "event_time",
+          "actor_urn",
+          "resource_urn",
+          "expiring_credit"
+        ]
+      },
+      "Credit": {
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "description": {
+            "type": "string"
+          },
+          "issue_amount": {
+            "type": "string"
+          },
+          "remaining_amount": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "sub_category": {
+            "type": "string"
+          },
+          "issue_date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "expiration_date": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "description",
+          "issue_amount",
+          "remaining_amount",
+          "category",
+          "sub_category",
+          "issue_date",
+          "expiration_date"
+        ]
+      }
+    }
+  }
+]

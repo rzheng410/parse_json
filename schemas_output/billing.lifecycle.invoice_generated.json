@@ -1,0 +1,95 @@
+[
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$ref": "#/$defs/InvoiceGenerated",
+    "$defs": {
+      "InvoiceGenerated": {
+        "properties": {
+          "event_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "resource_urn": {
+            "type": "string"
+          },
+          "invoice_total": {
+            "type": "string"
+          },
+          "invoice_segment": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "event_time",
+          "resource_urn",
+          "invoice_total",
+          "invoice_segment"
+        ]
+      }
+    }
+  },
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$ref": "#/$defs/InvoiceGenerated",
+    "$defs": {
+      "InvoiceGenerated": {
+        "properties": {
+          "event_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "resource_urn": {
+            "type": "string"
+          },
+          "invoice_total": {
+            "type": "string"
+          },
+          "invoice_segment": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "event_time",
+          "resource_urn",
+          "invoice_total",
+          "invoice_segment"
+        ]
+      }
+    }
+  },
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$ref": "#/$defs/InvoiceGenerated",
+    "$defs": {
+      "InvoiceGenerated": {
+        "properties": {
+          "event_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "resource_urn": {
+            "type": "string"
+          },
+          "invoice_total": {
+            "type": "string"
+          },
+          "invoice_segment": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "event_time",
+          "resource_urn",
+          "invoice_total",
+          "invoice_segment"
+        ]
+      }
+    }
+  }
+]

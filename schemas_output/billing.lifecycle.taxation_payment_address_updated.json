@@ -1,0 +1,83 @@
+[
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$ref": "#/$defs/TaxationPaymentAddressUpdated",
+    "$defs": {
+      "TaxationPaymentAddressUpdated": {
+        "properties": {
+          "event_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "resource_urn": {
+            "type": "string"
+          },
+          "billing_address_id": {
+            "type": "integer"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "event_time",
+          "resource_urn",
+          "billing_address_id"
+        ]
+      }
+    }
+  },
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$ref": "#/$defs/TaxationPaymentAddressUpdated",
+    "$defs": {
+      "TaxationPaymentAddressUpdated": {
+        "properties": {
+          "event_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "resource_urn": {
+            "type": "string"
+          },
+          "billing_address_id": {
+            "type": "integer"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "event_time",
+          "resource_urn",
+          "billing_address_id"
+        ]
+      }
+    }
+  },
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$ref": "#/$defs/TaxationPaymentAddressUpdated",
+    "$defs": {
+      "TaxationPaymentAddressUpdated": {
+        "properties": {
+          "event_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "resource_urn": {
+            "type": "string"
+          },
+          "billing_address_id": {
+            "type": "integer"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "event_time",
+          "resource_urn",
+          "billing_address_id"
+        ]
+      }
+    }
+  }
+]

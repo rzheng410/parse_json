@@ -1,0 +1,107 @@
+[
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$ref": "#/$defs/CardChargeFail",
+    "$defs": {
+      "CardChargeFail": {
+        "properties": {
+          "actor_urn": {
+            "type": "string"
+          },
+          "event_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "resource_urn": {
+            "type": "string"
+          },
+          "charge_transaction_id": {
+            "type": "integer"
+          },
+          "decline_code": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "actor_urn",
+          "event_time",
+          "resource_urn",
+          "charge_transaction_id",
+          "decline_code"
+        ]
+      }
+    }
+  },
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$ref": "#/$defs/CardChargeFail",
+    "$defs": {
+      "CardChargeFail": {
+        "properties": {
+          "actor_urn": {
+            "type": "string"
+          },
+          "event_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "resource_urn": {
+            "type": "string"
+          },
+          "charge_transaction_id": {
+            "type": "integer"
+          },
+          "decline_code": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "actor_urn",
+          "event_time",
+          "resource_urn",
+          "charge_transaction_id",
+          "decline_code"
+        ]
+      }
+    }
+  },
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$ref": "#/$defs/CardChargeFail",
+    "$defs": {
+      "CardChargeFail": {
+        "properties": {
+          "actor_urn": {
+            "type": "string"
+          },
+          "event_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "resource_urn": {
+            "type": "string"
+          },
+          "charge_transaction_id": {
+            "type": "integer"
+          },
+          "decline_code": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "actor_urn",
+          "event_time",
+          "resource_urn",
+          "charge_transaction_id",
+          "decline_code"
+        ]
+      }
+    }
+  }
+]

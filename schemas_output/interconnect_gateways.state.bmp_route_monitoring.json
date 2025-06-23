@@ -1,0 +1,178 @@
+[
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "BMP Route Monitoring",
+    "type": "object",
+    "properties": {
+      "tunnel_id": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "peer_address": {
+        "type": "string",
+        "minLength": 1
+      },
+      "peer_asn": {
+        "type": "integer",
+        "minimum": 1
+      }
+    },
+    "required": [
+      "tunnel_id",
+      "peer_address",
+      "peer_asn"
+    ],
+    "oneOf": [
+      {
+        "properties": {
+          "withdrawn_routes": {
+            "$ref": "#/$defs/WithdrawnRoutes"
+          },
+          "announced_routes": {
+            "type": "null"
+          }
+        },
+        "required": [
+          "withdrawn_routes"
+        ]
+      },
+      {
+        "properties": {
+          "announced_routes": {
+            "$ref": "#/$defs/AnnouncedRoutes"
+          },
+          "withdrawn_routes": {
+            "type": "null"
+          }
+        },
+        "required": [
+          "announced_routes"
+        ]
+      }
+    ],
+    "$defs": {
+      "WithdrawnRoutes": {
+        "type": "object",
+        "properties": {
+          "routes": {
+            "type": "array",
+            "minItems": 1
+          }
+        },
+        "required": [
+          "routes"
+        ]
+      },
+      "AnnouncedRoutes": {
+        "type": "object",
+        "properties": {
+          "routes": {
+            "type": "array",
+            "minItems": 1
+          },
+          "next_hop": {
+            "type": "string",
+            "minLength": 1
+          },
+          "as_path": {
+            "type": "array",
+            "minItems": 1
+          }
+        },
+        "required": [
+          "routes",
+          "next_hop",
+          "as_path"
+        ]
+      }
+    }
+  },
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "BMP Route Monitoring",
+    "type": "object",
+    "properties": {
+      "tunnel_id": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "peer_address": {
+        "type": "string",
+        "minLength": 1
+      },
+      "peer_asn": {
+        "type": "integer",
+        "minimum": 1
+      }
+    },
+    "required": [
+      "tunnel_id",
+      "peer_address",
+      "peer_asn"
+    ],
+    "oneOf": [
+      {
+        "properties": {
+          "withdrawn_routes": {
+            "$ref": "#/$defs/WithdrawnRoutes"
+          },
+          "announced_routes": {
+            "type": "null"
+          }
+        },
+        "required": [
+          "withdrawn_routes"
+        ]
+      },
+      {
+        "properties": {
+          "announced_routes": {
+            "$ref": "#/$defs/AnnouncedRoutes"
+          },
+          "withdrawn_routes": {
+            "type": "null"
+          }
+        },
+        "required": [
+          "announced_routes"
+        ]
+      }
+    ],
+    "$defs": {
+      "WithdrawnRoutes": {
+        "type": "object",
+        "properties": {
+          "routes": {
+            "type": "array",
+            "minItems": 1
+          }
+        },
+        "required": [
+          "routes"
+        ]
+      },
+      "AnnouncedRoutes": {
+        "type": "object",
+        "properties": {
+          "routes": {
+            "type": "array",
+            "minItems": 1
+          },
+          "next_hop": {
+            "type": "string",
+            "minLength": 1
+          },
+          "as_path": {
+            "type": "array",
+            "minItems": 1
+          }
+        },
+        "required": [
+          "routes",
+          "next_hop",
+          "as_path"
+        ]
+      }
+    }
+  }
+]

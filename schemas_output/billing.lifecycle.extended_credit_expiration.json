@@ -1,0 +1,125 @@
+[
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$ref": "#/$defs/ExtendCreditExpiration",
+    "$defs": {
+      "ExtendCreditExpiration": {
+        "properties": {
+          "event_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "actor_urn": {
+            "type": "string"
+          },
+          "resource_urn": {
+            "type": "string"
+          },
+          "credit_id": {
+            "type": "integer"
+          },
+          "old_expiration": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "new_expiration": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "event_time",
+          "actor_urn",
+          "resource_urn",
+          "credit_id",
+          "old_expiration",
+          "new_expiration"
+        ]
+      }
+    }
+  },
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$ref": "#/$defs/ExtendCreditExpiration",
+    "$defs": {
+      "ExtendCreditExpiration": {
+        "properties": {
+          "event_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "actor_urn": {
+            "type": "string"
+          },
+          "resource_urn": {
+            "type": "string"
+          },
+          "credit_id": {
+            "type": "integer"
+          },
+          "old_expiration": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "new_expiration": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "event_time",
+          "actor_urn",
+          "resource_urn",
+          "credit_id",
+          "old_expiration",
+          "new_expiration"
+        ]
+      }
+    }
+  },
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$ref": "#/$defs/ExtendCreditExpiration",
+    "$defs": {
+      "ExtendCreditExpiration": {
+        "properties": {
+          "event_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "actor_urn": {
+            "type": "string"
+          },
+          "resource_urn": {
+            "type": "string"
+          },
+          "credit_id": {
+            "type": "integer"
+          },
+          "old_expiration": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "new_expiration": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "event_time",
+          "actor_urn",
+          "resource_urn",
+          "credit_id",
+          "old_expiration",
+          "new_expiration"
+        ]
+      }
+    }
+  }
+]

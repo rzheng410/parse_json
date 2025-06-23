@@ -1,0 +1,31 @@
+[
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Interconnect Attachment BGP Status",
+    "type": "object",
+    "properties": {
+      "ia_uuid": {
+        "type": "string"
+      },
+      "partner_interconnect_attachment_urn": {
+        "type": "string"
+      },
+      "igr": {
+        "type": "string"
+      },
+      "status": {
+        "type": "boolean"
+      },
+      "timestamp": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "ia_uuid",
+      "partner_interconnect_attachment_urn",
+      "igr",
+      "status",
+      "timestamp"
+    ]
+  }
+]

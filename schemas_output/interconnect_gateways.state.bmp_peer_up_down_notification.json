@@ -1,0 +1,245 @@
+[
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "BMP Peer Up Down Notification Message",
+    "type": "object",
+    "properties": {
+      "tunnel_id": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "bgp_id": {
+        "type": "string",
+        "minLength": 1
+      },
+      "bmp_peer_down": {
+        "$ref": "#/$defs/BMPPeerDownNotificationMessage"
+      },
+      "bmp_peer_up": {
+        "$ref": "#/$defs/BMPPeerUpNotificationMessage"
+      }
+    },
+    "required": [
+      "tunnel_id",
+      "bgp_id"
+    ],
+    "oneOf": [
+      {
+        "required": [
+          "bmp_peer_down"
+        ]
+      },
+      {
+        "required": [
+          "bmp_peer_up"
+        ]
+      }
+    ],
+    "$defs": {
+      "BMPPeerDownNotificationMessage": {
+        "type": "object",
+        "properties": {
+          "reason": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "error_code": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 6
+          },
+          "error_sub_code": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "data": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "reason",
+          "error_code",
+          "error_sub_code",
+          "data"
+        ]
+      },
+      "BMPPeerUpNotificationMessage": {
+        "type": "object",
+        "properties": {
+          "local_address": {
+            "type": "string",
+            "minLength": 7
+          },
+          "local_port": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 65535
+          },
+          "remote_port": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 65535
+          },
+          "sent_open_msg": {
+            "$ref": "#/$defs/BGPOpenMessage"
+          },
+          "received_open_msg": {
+            "$ref": "#/$defs/BGPOpenMessage"
+          }
+        },
+        "required": [
+          "local_address",
+          "local_port",
+          "remote_port",
+          "sent_open_msg",
+          "received_open_msg"
+        ]
+      },
+      "BGPOpenMessage": {
+        "type": "object",
+        "properties": {
+          "my_as": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "hold_time": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "bgp_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "my_as",
+          "hold_time",
+          "bgp_id"
+        ]
+      }
+    }
+  },
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "BMP Peer Up Down Notification Message",
+    "type": "object",
+    "properties": {
+      "tunnel_id": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "bgp_id": {
+        "type": "string",
+        "minLength": 1
+      },
+      "bmp_peer_down": {
+        "$ref": "#/$defs/BMPPeerDownNotificationMessage"
+      },
+      "bmp_peer_up": {
+        "$ref": "#/$defs/BMPPeerUpNotificationMessage"
+      }
+    },
+    "required": [
+      "tunnel_id",
+      "bgp_id"
+    ],
+    "oneOf": [
+      {
+        "required": [
+          "bmp_peer_down"
+        ]
+      },
+      {
+        "required": [
+          "bmp_peer_up"
+        ]
+      }
+    ],
+    "$defs": {
+      "BMPPeerDownNotificationMessage": {
+        "type": "object",
+        "properties": {
+          "reason": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "error_code": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 6
+          },
+          "error_sub_code": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "data": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "contentEncoding": "base64"
+          }
+        },
+        "required": [
+          "reason",
+          "error_code",
+          "error_sub_code"
+        ]
+      },
+      "BMPPeerUpNotificationMessage": {
+        "type": "object",
+        "properties": {
+          "local_address": {
+            "type": "string",
+            "minLength": 7
+          },
+          "local_port": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 65535
+          },
+          "remote_port": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 65535
+          },
+          "sent_open_msg": {
+            "$ref": "#/$defs/BGPOpenMessage"
+          },
+          "received_open_msg": {
+            "$ref": "#/$defs/BGPOpenMessage"
+          }
+        },
+        "required": [
+          "local_address",
+          "local_port",
+          "remote_port",
+          "sent_open_msg",
+          "received_open_msg"
+        ]
+      },
+      "BGPOpenMessage": {
+        "type": "object",
+        "properties": {
+          "my_as": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "hold_time": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "bgp_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "my_as",
+          "hold_time",
+          "bgp_id"
+        ]
+      }
+    }
+  }
+]

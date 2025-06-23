@@ -1,0 +1,95 @@
+[
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$ref": "#/$defs/FailedMonthCloseCharge",
+    "$defs": {
+      "FailedMonthCloseCharge": {
+        "properties": {
+          "event_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "resource_urn": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "string"
+          },
+          "invoice_id": {
+            "type": "integer"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "event_time",
+          "resource_urn",
+          "amount",
+          "invoice_id"
+        ]
+      }
+    }
+  },
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$ref": "#/$defs/FailedMonthCloseCharge",
+    "$defs": {
+      "FailedMonthCloseCharge": {
+        "properties": {
+          "event_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "resource_urn": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "string"
+          },
+          "invoice_id": {
+            "type": "integer"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "event_time",
+          "resource_urn",
+          "amount",
+          "invoice_id"
+        ]
+      }
+    }
+  },
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$ref": "#/$defs/FailedMonthCloseCharge",
+    "$defs": {
+      "FailedMonthCloseCharge": {
+        "properties": {
+          "event_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "resource_urn": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "string"
+          },
+          "invoice_id": {
+            "type": "integer"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "event_time",
+          "resource_urn",
+          "amount",
+          "invoice_id"
+        ]
+      }
+    }
+  }
+]

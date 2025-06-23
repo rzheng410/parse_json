@@ -1,0 +1,110 @@
+[
+  {
+    "$schema": "http://json-schema.org/draft/2020-12/schema#",
+    "type": "object",
+    "properties": {
+      "vendor_uuid": {
+        "type": "string"
+      },
+      "development_mode": {
+        "type": "boolean"
+      },
+      "app_uuid": {
+        "type": "string"
+      },
+      "start_date": {
+        "type": "object",
+        "properties": {
+          "seconds": {
+            "type": "integer"
+          }
+        }
+      },
+      "end_date": {
+        "type": "object",
+        "properties": {
+          "seconds": {
+            "type": "integer"
+          }
+        }
+      },
+      "usage": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "resource_uuid": {
+              "type": "string"
+            },
+            "dimension_slug": {
+              "type": "string"
+            },
+            "quantity": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "required": [
+      "app_uuid",
+      "start_date",
+      "end_date",
+      "usage_data"
+    ]
+  },
+  {
+    "$schema": "http://json-schema.org/draft/2020-12/schema#",
+    "type": "object",
+    "properties": {
+      "vendor_uuid": {
+        "type": "string"
+      },
+      "development_mode": {
+        "type": "boolean"
+      },
+      "app_uuid": {
+        "type": "string"
+      },
+      "start_date": {
+        "type": "object",
+        "properties": {
+          "seconds": {
+            "type": "integer"
+          }
+        }
+      },
+      "end_date": {
+        "type": "object",
+        "properties": {
+          "seconds": {
+            "type": "integer"
+          }
+        }
+      },
+      "usage": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "resource_uuid": {
+              "type": "string"
+            },
+            "dimension_slug": {
+              "type": "string"
+            },
+            "quantity": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "required": [
+      "app_uuid",
+      "start_date",
+      "end_date",
+      "usage_data"
+    ]
+  }
+]

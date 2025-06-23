@@ -1,0 +1,54 @@
+[
+  {
+    "$schema": "http://json-schema.org/draft/2020-12/schema#",
+    "type": "object",
+    "properties": {
+      "usage_request_id": {
+        "type": "integer"
+      },
+      "vendor_uuid": {
+        "type": "string"
+      },
+      "development_mode": {
+        "type": "boolean"
+      },
+      "app_uuid": {
+        "type": "string"
+      },
+      "start_date": {
+        "type": "object",
+        "properties": {
+          "seconds": {
+            "type": "integer"
+          }
+        }
+      },
+      "end_date": {
+        "type": "object",
+        "properties": {
+          "seconds": {
+            "type": "integer"
+          }
+        }
+      },
+      "resource_uuid": {
+        "type": "string"
+      },
+      "dimension_slug": {
+        "type": "string"
+      },
+      "quantity": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "usage_request_id",
+      "app_uuid",
+      "start_date",
+      "end_date",
+      "resource_uuid",
+      "dimension_slug",
+      "quantity"
+    ]
+  }
+]

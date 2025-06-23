@@ -1,0 +1,91 @@
+[
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Peering Billing Usage",
+    "type": "object",
+    "properties": {
+      "uuid": {
+        "type": "string"
+      },
+      "account_urn": {
+        "type": "string"
+      },
+      "resource_urn": {
+        "type": "string"
+      },
+      "sku": {
+        "type": "string"
+      },
+      "region_urn": {
+        "type": "string"
+      },
+      "event_type": {
+        "type": "string"
+      },
+      "attributes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "key": {
+              "type": "string"
+            },
+            "unit": {
+              "type": "string"
+            },
+            "quantity": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "key",
+            "unit",
+            "quantity"
+          ]
+        }
+      },
+      "measurement": {
+        "type": "object",
+        "properties": {
+          "start": {
+            "type": "string"
+          },
+          "stop": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "start",
+          "stop"
+        ]
+      },
+      "metadata": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "key": {
+              "type": "string"
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "key",
+            "value"
+          ]
+        }
+      }
+    },
+    "required": [
+      "uuid",
+      "account_urn",
+      "resource_urn",
+      "sku",
+      "region_urn",
+      "event_type",
+      "attributes"
+    ]
+  }
+]

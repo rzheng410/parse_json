@@ -1,0 +1,43 @@
+[
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Transit Gateway Bandwidth",
+    "type": "object",
+    "properties": {
+      "uuid": {
+        "type": "string"
+      },
+      "src_tunnel_id": {
+        "type": "number"
+      },
+      "dst_tunnel_id": {
+        "type": "number"
+      },
+      "src_region": {
+        "type": "string"
+      },
+      "dst_region": {
+        "type": "string"
+      },
+      "node": {
+        "type": "string"
+      },
+      "timestamp": {
+        "type": "string"
+      },
+      "bytes": {
+        "type": "number"
+      }
+    },
+    "required": [
+      "uuid",
+      "src_tunnel_id",
+      "dst_tunnel_id",
+      "src_region",
+      "dst_region",
+      "node",
+      "timestamp",
+      "bytes"
+    ]
+  }
+]

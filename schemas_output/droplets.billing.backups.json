@@ -1,0 +1,119 @@
+[
+  {
+    "$schema": "http://json-schema.org/draft/2020-12/schema#",
+    "type": "object",
+    "properties": {
+      "UUID": {
+        "type": "string"
+      },
+      "account_urn": {
+        "type": "string"
+      },
+      "resource_urn": {
+        "type": "string"
+      },
+      "sku": {
+        "type": "string"
+      },
+      "region_urn": {
+        "type": "string"
+      },
+      "attributes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "key": {
+              "type": "string"
+            },
+            "unit": {
+              "type": "integer"
+            },
+            "quantity": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "key",
+            "unit",
+            "quantity"
+          ]
+        }
+      },
+      "metadata": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "key": {
+              "type": "string"
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "key",
+            "value"
+          ]
+        }
+      },
+      "EventType": {
+        "type": "object",
+        "properties": {
+          "Measurement": {
+            "type": "object",
+            "properties": {
+              "start": {
+                "type": "object",
+                "properties": {
+                  "seconds": {
+                    "type": "integer"
+                  },
+                  "nanos": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "seconds",
+                  "nanos"
+                ]
+              },
+              "stop": {
+                "type": "object",
+                "properties": {
+                  "seconds": {
+                    "type": "integer"
+                  },
+                  "nanos": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "seconds",
+                  "nanos"
+                ]
+              }
+            },
+            "required": [
+              "start",
+              "stop"
+            ]
+          }
+        },
+        "required": [
+          "Measurement"
+        ]
+      }
+    },
+    "required": [
+      "UUID",
+      "account_urn",
+      "resource_urn",
+      "sku",
+      "region_urn",
+      "attributes",
+      "EventType"
+    ]
+  }
+]
