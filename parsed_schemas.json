@@ -1,0 +1,214 @@
+{
+  "parsed_at": "2025-06-26T12:33:18.746008",
+  "total_schemas": 6,
+  "schemas": {
+    "invoice_generated": {
+      "event_type": "Invoice Generated",
+      "description": "Schema for invoice generation events",
+      "fields": {
+        "event_time": {
+          "type": "string",
+          "format": "date-time",
+          "required": true
+        },
+        "resource_urn": {
+          "type": "string",
+          "required": true
+        },
+        "invoice_total": {
+          "type": "string",
+          "required": true
+        },
+        "invoice_segment": {
+          "type": "string",
+          "required": true
+        }
+      }
+    },
+    "payment_method_added": {
+      "event_type": "Payment Method Added",
+      "description": "Schema for payment method addition events",
+      "fields": {
+        "actor_urn": {
+          "type": "string",
+          "required": true
+        },
+        "event_time": {
+          "type": "string",
+          "format": "date-time",
+          "required": true
+        },
+        "resource_urn": {
+          "type": "string",
+          "required": true
+        },
+        "success": {
+          "type": "boolean",
+          "required": true
+        },
+        "payment_method": {
+          "type": "object",
+          "required": true,
+          "nested_fields": {
+            "payment_method_id": {
+              "type": "integer",
+              "required": true
+            },
+            "payment_method_type": {
+              "type": "string",
+              "required": true
+            },
+            "external_payment_method_id": {
+              "type": "string",
+              "required": true
+            },
+            "fingerprint": {
+              "type": "string",
+              "required": true
+            }
+          }
+        }
+      }
+    },
+    "awarded_credit": {
+      "event_type": "Awarded Credit",
+      "description": "Schema for credit award events",
+      "fields": {
+        "event_time": {
+          "type": "string",
+          "format": "date-time",
+          "required": true
+        },
+        "actor_urn": {
+          "type": "string",
+          "required": true
+        },
+        "resource_urn": {
+          "type": "string",
+          "required": true
+        },
+        "expiring_credit": {
+          "type": "object",
+          "required": true,
+          "nested_fields": {
+            "id": {
+              "type": "integer",
+              "required": true
+            },
+            "description": {
+              "type": "string",
+              "required": true
+            },
+            "issue_amount": {
+              "type": "string",
+              "required": true
+            },
+            "remaining_amount": {
+              "type": "string",
+              "required": true
+            },
+            "category": {
+              "type": "string",
+              "required": true
+            },
+            "sub_category": {
+              "type": "string",
+              "required": true
+            },
+            "issue_date": {
+              "type": "string",
+              "format": "date-time",
+              "required": true
+            },
+            "expiration_date": {
+              "type": "string",
+              "format": "date-time",
+              "required": true
+            }
+          }
+        }
+      }
+    },
+    "card_charged_failed": {
+      "event_type": "Card Charge Failed",
+      "description": "Schema for failed card charge events",
+      "fields": {
+        "actor_urn": {
+          "type": "string",
+          "required": true
+        },
+        "event_time": {
+          "type": "string",
+          "format": "date-time",
+          "required": true
+        },
+        "resource_urn": {
+          "type": "string",
+          "required": true
+        },
+        "charge_transaction_id": {
+          "type": "integer",
+          "required": true
+        },
+        "decline_code": {
+          "type": "string",
+          "required": true
+        }
+      }
+    },
+    "failed_month_close_charge": {
+      "event_type": "Failed Month Close Charge",
+      "description": "Schema for failed month-end charge events",
+      "fields": {
+        "event_time": {
+          "type": "string",
+          "format": "date-time",
+          "required": true
+        },
+        "resource_urn": {
+          "type": "string",
+          "required": true
+        },
+        "amount": {
+          "type": "string",
+          "required": true
+        },
+        "invoice_id": {
+          "type": "integer",
+          "required": true
+        }
+      }
+    },
+    "account_state_updated": {
+      "event_type": "Account State Updated",
+      "description": "Schema for account state update events",
+      "fields": {
+        "event_time": {
+          "type": "string",
+          "format": "date-time",
+          "required": true
+        },
+        "resource_urn": {
+          "type": "string",
+          "required": true
+        },
+        "actor_urn": {
+          "type": "string",
+          "required": false
+        },
+        "state_name": {
+          "type": "string",
+          "required": true
+        },
+        "state_value": {
+          "type": "string",
+          "required": true
+        },
+        "state_note": {
+          "type": "string",
+          "required": true
+        }
+      }
+    }
+  }
+}

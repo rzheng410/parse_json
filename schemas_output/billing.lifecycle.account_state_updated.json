@@ -86,7 +86,39 @@
           "resource_urn": {
             "type": "string"
           },
-          "actor_urn": {
+          "state_name": {
+            "type": "string"
+          },
+          "state_value": {
+            "type": "string"
+          },
+          "state_note": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "event_time",
+          "resource_urn",
+          "state_name",
+          "state_value",
+          "state_note"
+        ]
+      }
+    }
+  },
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$ref": "#/$defs/AccountStateUpdated",
+    "$defs": {
+      "AccountStateUpdated": {
+        "properties": {
+          "event_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "resource_urn": {
             "type": "string"
           },
           "state_name": {
@@ -104,7 +136,6 @@
         "required": [
           "event_time",
           "resource_urn",
-          "actor_urn",
           "state_name",
           "state_value",
           "state_note"
@@ -164,39 +195,7 @@
           "resource_urn": {
             "type": "string"
           },
-          "state_name": {
-            "type": "string"
-          },
-          "state_value": {
-            "type": "string"
-          },
-          "state_note": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false,
-        "type": "object",
-        "required": [
-          "event_time",
-          "resource_urn",
-          "state_name",
-          "state_value",
-          "state_note"
-        ]
-      }
-    }
-  },
-  {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$ref": "#/$defs/AccountStateUpdated",
-    "$defs": {
-      "AccountStateUpdated": {
-        "properties": {
-          "event_time": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "resource_urn": {
+          "actor_urn": {
             "type": "string"
           },
           "state_name": {
@@ -214,6 +213,7 @@
         "required": [
           "event_time",
           "resource_urn",
+          "actor_urn",
           "state_name",
           "state_value",
           "state_note"

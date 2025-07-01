@@ -28,5 +28,5 @@ for event_type, schemas in schemas_by_event_type.items():
     file_path = output_dir / f"{event_type}.json"
     with open(file_path, 'w') as f:
         json.dump(schemas, f, indent=2)
-
+print(len(event_type), "event types found.")
 print(f"All schema files saved to: {output_dir.resolve()}")

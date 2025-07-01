@@ -1,0 +1,64 @@
+[
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$ref": "#/$defs/DeployEvent",
+    "$defs": {
+      "DeployEvent": {
+        "properties": {
+          "event_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string"
+          },
+          "namespace": {
+            "type": "string"
+          },
+          "deployment_id": {
+            "type": "string"
+          },
+          "service_id": {
+            "type": "string"
+          },
+          "revision": {
+            "type": "string"
+          },
+          "previous_revision": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "cluster": {
+            "type": "string"
+          },
+          "is_rollback": {
+            "type": "boolean"
+          },
+          "images": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "event_time",
+          "name",
+          "namespace",
+          "deployment_id",
+          "service_id",
+          "revision",
+          "previous_revision",
+          "region",
+          "cluster",
+          "is_rollback",
+          "images"
+        ]
+      }
+    }
+  }
+]

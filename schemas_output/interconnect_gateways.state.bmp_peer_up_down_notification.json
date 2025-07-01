@@ -53,14 +53,17 @@
             "minimum": 0
           },
           "data": {
-            "type": "string"
+            "type": [
+              "string",
+              "null"
+            ],
+            "contentEncoding": "base64"
           }
         },
         "required": [
           "reason",
           "error_code",
-          "error_sub_code",
-          "data"
+          "error_sub_code"
         ]
       },
       "BMPPeerUpNotificationMessage": {
@@ -173,17 +176,14 @@
             "minimum": 0
           },
           "data": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "contentEncoding": "base64"
+            "type": "string"
           }
         },
         "required": [
           "reason",
           "error_code",
-          "error_sub_code"
+          "error_sub_code",
+          "data"
         ]
       },
       "BMPPeerUpNotificationMessage": {

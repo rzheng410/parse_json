@@ -1,0 +1,165 @@
+{
+  "common_fields": {
+    "event_time": [
+      "invoice_generated",
+      "payment_method_added",
+      "awarded_credit",
+      "card_charged_failed",
+      "failed_month_close_charge",
+      "account_state_updated"
+    ],
+    "resource_urn": [
+      "invoice_generated",
+      "payment_method_added",
+      "awarded_credit",
+      "card_charged_failed",
+      "failed_month_close_charge",
+      "account_state_updated"
+    ],
+    "actor_urn": [
+      "payment_method_added",
+      "awarded_credit",
+      "card_charged_failed",
+      "account_state_updated"
+    ]
+  },
+  "unique_fields": {
+    "event_time": [
+      "invoice_generated",
+      "payment_method_added",
+      "awarded_credit",
+      "card_charged_failed",
+      "failed_month_close_charge",
+      "account_state_updated"
+    ],
+    "resource_urn": [
+      "invoice_generated",
+      "payment_method_added",
+      "awarded_credit",
+      "card_charged_failed",
+      "failed_month_close_charge",
+      "account_state_updated"
+    ],
+    "invoice_total": [
+      "invoice_generated"
+    ],
+    "invoice_segment": [
+      "invoice_generated"
+    ],
+    "actor_urn": [
+      "payment_method_added",
+      "awarded_credit",
+      "card_charged_failed",
+      "account_state_updated"
+    ],
+    "success": [
+      "payment_method_added"
+    ],
+    "payment_method": [
+      "payment_method_added"
+    ],
+    "expiring_credit": [
+      "awarded_credit"
+    ],
+    "charge_transaction_id": [
+      "card_charged_failed"
+    ],
+    "decline_code": [
+      "card_charged_failed"
+    ],
+    "amount": [
+      "failed_month_close_charge"
+    ],
+    "invoice_id": [
+      "failed_month_close_charge"
+    ],
+    "state_name": [
+      "account_state_updated"
+    ],
+    "state_value": [
+      "account_state_updated"
+    ],
+    "state_note": [
+      "account_state_updated"
+    ]
+  },
+  "field_types": {
+    "string": [
+      "invoice_generated.event_time",
+      "invoice_generated.resource_urn",
+      "invoice_generated.invoice_total",
+      "invoice_generated.invoice_segment",
+      "payment_method_added.actor_urn",
+      "payment_method_added.event_time",
+      "payment_method_added.resource_urn",
+      "awarded_credit.event_time",
+      "awarded_credit.actor_urn",
+      "awarded_credit.resource_urn",
+      "card_charged_failed.actor_urn",
+      "card_charged_failed.event_time",
+      "card_charged_failed.resource_urn",
+      "card_charged_failed.decline_code",
+      "failed_month_close_charge.event_time",
+      "failed_month_close_charge.resource_urn",
+      "failed_month_close_charge.amount",
+      "account_state_updated.event_time",
+      "account_state_updated.resource_urn",
+      "account_state_updated.actor_urn",
+      "account_state_updated.state_name",
+      "account_state_updated.state_value",
+      "account_state_updated.state_note"
+    ],
+    "boolean": [
+      "payment_method_added.success"
+    ],
+    "object": [
+      "payment_method_added.payment_method",
+      "awarded_credit.expiring_credit"
+    ],
+    "integer": [
+      "card_charged_failed.charge_transaction_id",
+      "failed_month_close_charge.invoice_id"
+    ]
+  },
+  "required_fields_by_schema": {
+    "invoice_generated": [
+      "event_time",
+      "resource_urn",
+      "invoice_total",
+      "invoice_segment"
+    ],
+    "payment_method_added": [
+      "actor_urn",
+      "event_time",
+      "resource_urn",
+      "success",
+      "payment_method"
+    ],
+    "awarded_credit": [
+      "event_time",
+      "actor_urn",
+      "resource_urn",
+      "expiring_credit"
+    ],
+    "card_charged_failed": [
+      "actor_urn",
+      "event_time",
+      "resource_urn",
+      "charge_transaction_id",
+      "decline_code"
+    ],
+    "failed_month_close_charge": [
+      "event_time",
+      "resource_urn",
+      "amount",
+      "invoice_id"
+    ],
+    "account_state_updated": [
+      "event_time",
+      "resource_urn",
+      "state_name",
+      "state_value",
+      "state_note"
+    ]
+  }
+}
